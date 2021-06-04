@@ -1,7 +1,7 @@
 ---
 sort: 2 # follow a certain sequence of letters or numbers
 ---
-# jieru shuoming
+# Access instructions
 ### 查看表格
 
 | 默认格式  | 左对齐 | 居中 | 右对齐 |                     
