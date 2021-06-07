@@ -11,9 +11,9 @@ sort: 1 # follow a certain sequence of letters or numbers
 如需使用API ，请先登录网页端，完成API key的申请和权限配置，再据此文档详情进行开发和交易。
 
 权限说明如下：
-* 读取权限：读取权限用于对数据的查询接口，例如：订单查询、成交查询等。
-* 交易权限：交易权限用于下单、撤单、划转类接口。
-* 提币权限：提币权限用于创建提币订单、取消提币订单操作。
+* **读取权限**：读取权限用于对数据的查询接口，例如：订单查询、成交查询等。
+* **交易权限**：交易权限用于下单、撤单、划转类接口。
+* **提币权限**：提币权限用于创建提币订单、取消提币订单操作。
 
 ### 安全认证
 AccessKey为API 访问密钥，SecretKey为用户对请求进行签名的密钥。 重要提示：这两个密钥与账号安全紧密相关，无论何时都请勿向其它人透露
@@ -31,12 +31,14 @@ AccessKey为API 访问密钥，SecretKey为用户对请求进行签名的密钥�
 2. API 访问密钥（AccessKeyId） 您申请的 APIKEY 中的AccessKey。
 
 3. 签名方法（SignatureMethod） 用户计算签名的基于哈希的协议，此处使用 HmacSHA256。
-签名版本（SignatureVersion） 签名协议的版本，此处使用2。
 
-4. 时间戳（Timestamp） 您发出请求的时间 (UTC 时区)。在查询请求中包含此值有助于防止第三方截取您的请求。如：2017-05-11T16:22:06.123Z。再次强调是 (UTC 时区)
+4. 签名版本（SignatureVersion） 签名协议的版本，此处使用2。
+
+5. 时间戳（Timestamp） 您发出请求的时间 (UTC 时区)。在查询请求中包含此值有助于防止第三方截取您的请求。如：2017-05-11T16:22:06.123Z。再次强调是 (UTC 时区)
 调用的必需参数和可选参数。可以在每个方法的说明中查看这些参数及其含义。
 
-5. 签名计算得出的值，用于确保签名有效和未被篡改。
+6. 签名计算得出的值，用于确保签名有效和未被篡改。
+
 例：
 ```json
 https://api.hotcoinfin.com/v1/order/place?
@@ -119,7 +121,14 @@ type=buy
 GET\n
 api.hotcoinfin.com\n
 /v1/order/place\n
-AccessKeyId=AccessKeyHotcoin123456789&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T16%3A22%3A06.123Z&symbol=btc_gavc&tradeAmount=0.1&tradePrice=40000&type=buy
+AccessKeyId=AccessKeyHotcoin123456789
+&SignatureMethod=HmacSHA256
+&SignatureVersion=2
+&Timestamp=2017-05-11T16%3A22%3A06.123Z
+&symbol=btc_gavc
+&tradeAmount=0.1
+&tradePrice=40000
+&type=buy
 ```
 计算签名，将以下两个参数传入加密哈希函数：
 要进行签名计算的字符串
@@ -128,7 +137,14 @@ AccessKeyId=AccessKeyHotcoin123456789&SignatureMethod=HmacSHA256&SignatureVersio
 GET\n
 api.hotcoinfin.com\n
 /v1/order/place\n
-AccessKeyId=AccessKeyHotcoin123456789&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T16%3A22%3A06.123Z&symbol=btc_gavc&tradeAmount=0.1&tradePrice=40000&type=buy
+AccessKeyId=AccessKeyHotcoin123456789
+&SignatureMethod=HmacSHA256
+&SignatureVersion=2
+&Timestamp=2017-05-11T16%3A22%3A06.123Z
+&symbol=btc_gavc
+&tradeAmount=0.1
+&tradePrice=40000
+&type=buy
 ```
 进行签名的密钥（SecretKey）
 
@@ -142,7 +158,14 @@ SecretKeyHotcoin123456789
 最终，发送到服务器的 API 请求应该为：
 
 ```json
-
-https://api.hotcoinfin.com/v1/order/place?AccessKeyId=AccessKeyHotcoin123456789&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2017-05-11T16%3A22%3A06.123Z&symbol=btc_gavc&tradeAmount=0.1&tradePrice=40000&type=buy&Signature=2oEC%2ByhkHTsNkgPUq4ZB%2F5mlY7EZAtUDWOQ5EO01D%2BI%3D
+https://api.hotcoinfin.com/v1/order/place
+?AccessKeyId=AccessKeyHotcoin123456789
+&SignatureMethod=HmacSHA256
+&SignatureVersion=2
+&Timestamp=2017-05-11T16%3A22%3A06.123Z
+&symbol=btc_gavc
+&tradeAmount=0.1
+&tradePrice=40000&type=buy
+&Signature=2oEC%2ByhkHTsNkgPUq4ZB%2F5mlY7EZAtUDWOQ5EO01D%2BI%3D
 ```
 symbol 规则： 基础币种+计价币种。如BTC/USDT，symbol为btc_usdt；ETH/BTC， symbol为eth_btc。以此类推。
