@@ -26,17 +26,17 @@ AccessKey为API 访问密钥，SecretKey为用户对请求进行签名的密钥�
 ### 合法请求结构
 基于安全考虑，除行情API 外的 API 请求都必须进行签名运算。一个合法的请求由以下几部分组成：
 
-1、方法请求地址,即访问服务器地址：api.hotcoinfin.com后面跟上方法名，比如api.hotcoinfin.com/v1/order/place。 
+1. 方法请求地址,即访问服务器地址：api.hotcoinfin.com后面跟上方法名，比如api.hotcoinfin.com/v1/order/place。 
 
-2、API 访问密钥（AccessKeyId） 您申请的 APIKEY 中的AccessKey。
+2. API 访问密钥（AccessKeyId） 您申请的 APIKEY 中的AccessKey。
 
-3、签名方法（SignatureMethod） 用户计算签名的基于哈希的协议，此处使用 HmacSHA256。
+3. 签名方法（SignatureMethod） 用户计算签名的基于哈希的协议，此处使用 HmacSHA256。
 签名版本（SignatureVersion） 签名协议的版本，此处使用2。
 
-4、时间戳（Timestamp） 您发出请求的时间 (UTC 时区)。在查询请求中包含此值有助于防止第三方截取您的请求。如：2017-05-11T16:22:06.123Z。再次强调是 (UTC 时区)
+4. 时间戳（Timestamp） 您发出请求的时间 (UTC 时区)。在查询请求中包含此值有助于防止第三方截取您的请求。如：2017-05-11T16:22:06.123Z。再次强调是 (UTC 时区)
 调用的必需参数和可选参数。可以在每个方法的说明中查看这些参数及其含义。
 
-5、签名计算得出的值，用于确保签名有效和未被篡改。
+5. 签名计算得出的值，用于确保签名有效和未被篡改。
 例：
 ```json
 https://api.hotcoinfin.com/v1/order/place?
