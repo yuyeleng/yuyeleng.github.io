@@ -38,6 +38,11 @@ sort: 1 # follow a certain sequence of letters or numbers
   ]
 }
 ```
+1、每一篇开发文档都是导航文件夹下面的一个md文件。
+
+2、在代码段中json文档就指定为javascript格式即可。
+
+3、如果当前代码段需要标题，则需要在代码段之前用p标签把该标题包裹起来，指定css为custom-code-title。
 
 ### 链接
 QQ浏览器 | [点击打开](https://browser.qq.com/?adtag=SEM170314020/)    |   搜索资料常用
