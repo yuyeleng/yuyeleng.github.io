@@ -5,7 +5,7 @@
 
 以下是现货API文档各章节主要内容
 
-# 快速入门
+### 快速入门
 ### 接入准备
 如需使用API ，请先登录网页端，完成API key的申请和权限配置，再据此文档详情进行开发和交易。
 
@@ -49,7 +49,7 @@ AccessKeyId=AccessKeyHotcoin123456789
 ```
 
 
-## 签名运算
+### 签名运算
 API 请求在通过 Internet 发送的过程中极有可能被篡改。为了确保请求未被更改，我们会要求用户在每个请求中带上签名，来校验参数或参数值在传输途中是否发生了更改。
 
 计算签名所需的步骤：
@@ -135,7 +135,7 @@ https://api.hotcoinfin.com/v1/order/place?AccessKeyId=AccessKeyHotcoin123456789&
 
 symbol 规则： 基础币种+计价币种。如BTC/USDT，symbol为btc_usdt；ETH/BTC， symbol为eth_btc。以此类推。
 
-# 基础信息
+### 基础信息
 ### 简介 
 基础信息Rest接口提供了获取所有交易对信息。
 
@@ -217,7 +217,7 @@ maxOrderPrice|decimal|最大下单价格（下单金额指当订单类型为限�
   ]
 }
 ```
-# 行情接口
+### 行情接口
 ### 简介
 行情接口提供了多种K线、深度以及最新成交记录等行情数据。
 
