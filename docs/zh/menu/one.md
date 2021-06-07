@@ -96,3 +96,4 @@ Installing ri documentation for addressable-2.7.0
 ```json
 curl "https://api.huobi.pro/v2/account/deposit/address?currency=btc"
 ```
+这里是json代码
