@@ -11,7 +11,7 @@ curl "https://hkapi.hotcoin.top/v1/common/symbols"
 
 **HTTP 请求**
 
-* GET /v1/common/symbols
+- GET /v1/common/symbols
 
 **请求参数：**
 
@@ -41,6 +41,7 @@ minOrderCount|decimal|交易对最小下单量 (下单量指当订单类型为�
 maxOrderCount|decimal|交易对最大下单量 (下单量指当订单类型为限价单时，下单接口传的'tradeAmount')|max order count
 minOrderPrice|decimal|最小下单价格（下单金额指当订单类型为限价单时，下单接口传入的‘price’）|min order price
 maxOrderPrice|decimal|最大下单价格（下单金额指当订单类型为限价单时，下单接口传入的‘price’）|max order price
+
 返回json示例
 
 ```json

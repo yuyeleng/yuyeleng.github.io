@@ -14,7 +14,7 @@ sort: 1 # follow a certain sequence of letters or numbers
 
 ### 实时ticker数据
 **HTTP 请求**
-* GET /v1/market/ticker
+- GET /v1/market/ticker
 
 
 
@@ -38,9 +38,8 @@ high|y|number|24小时最高价 ||
 low|y|number|24小时最低价||
 vol|y|number|24小时成交量||
 change|y|number|24小时涨跌幅||
+
 返回json示例
-
-
 
 ```json
 {
@@ -62,7 +61,7 @@ change|y|number|24小时涨跌幅||
 ```
 ### 获取k线数据
 **HTTP 请求**
-* GET /v1/ticker
+-  GET /v1/ticker
 
 **请求参数：**
 
@@ -125,7 +124,7 @@ data<br>
 ### 获取深度数据
 **HTTP 请求**
 
-* GET /v1/depth
+- GET /v1/depth
 
 **请求参数：**
 
@@ -228,7 +227,7 @@ data|y|array（array）|最后一个k线数据，格式同上，但只有一个
 ### 获取实时成交数据
 **HTTP 请求**
 
-* GET /v1/trade
+- GET /v1/trade
 
 **请求参数：**
 
