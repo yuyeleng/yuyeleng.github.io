@@ -3,15 +3,5 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
-/.settings/
-/log/
-/target/
-/.classpath
-/.project
-/.sts4-cache/
-/service_newadmin.iml
 /.idea/
-*.log
-/LOG_HOME_IS_UNDEFINED/
-/.factorypath
 
