@@ -1,7 +1,7 @@
 ---
 sort: 1 # follow a certain sequence of letters or numbers
 ---
-# Hotcoin API
+# Hotcoin API2
 ## 安全认证
 AccessKey为API 访问密钥，SecretKey为用户对请求进行签名的密钥。 重要提示：这两个密钥与账号安全紧密相关，无论何时都请勿向其它人透露
 ### 查看表格
