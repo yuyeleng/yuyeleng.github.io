@@ -39,7 +39,7 @@ AccessKey为API 访问密钥，SecretKey为用户对请求进行签名的密钥�
 
 6. 签名计算得出的值，用于确保签名有效和未被篡改。
 
-例：
+**示例：**
 ```json
 https://api.hotcoinfin.com/v1/order/place?
 AccessKeyId=AccessKeyHotcoin123456789
@@ -59,7 +59,9 @@ API 请求在通过 Internet 发送的过程中极有可能被篡改。为了确
 
 计算签名所需的步骤：
 规范要计算签名的请求
-因为使用 HMAC 进行签名计算时，使用不同内容计算得到的结果会完全不同。所以在进行签名计算前，请先对请求进行规范化处理。下面以下单请求为例进行说明
+因为使用 HMAC 进行签名计算时，使用不同内容计算得到的结果会完全不同。所以在进行签名计算前，请先对请求进行规范化处理。下面以下单请求为例进行说明 
+
+**示例：**
 
 ```json
 https://api.hotcoinfin.com/v1/order/place?
@@ -88,6 +90,8 @@ api.hotcoinfin.com\n
 按照ASCII码的顺序对参数名进行排序(使用 UTF-8 编码，且进行了 URI 编码，十六进制字符必须大写，如‘:’会被编码为'%3A'，空格被编码为'%20')。
 例如，下面是请求参数的原始顺序，进行过编码后。
 
+**示例：**
+
 ```json
 AccessKeyId=AccessKeyHotcoin123456789
 &SignatureMethod=HmacSHA256
@@ -101,6 +105,8 @@ AccessKeyId=AccessKeyHotcoin123456789
 
 这些参数会被排序为：
 
+**示例：**
+
 ```json
 AccessKeyId=AccessKeyHotcoin123456789
 SignatureMethod=HmacSHA256
@@ -112,10 +118,9 @@ tradePrice=40000
 type=buy
 ```
 
-按照以上顺序，将各参数使用字符’&’连接。
+按照以上顺序，将各参数使用字符’&’连接。 组成最终的要进行签名计算的字符串如下：
 
-
-组成最终的要进行签名计算的字符串如下：
+**示例：**
 
 ```json
 GET\n
@@ -130,8 +135,9 @@ AccessKeyId=AccessKeyHotcoin123456789
 &tradePrice=40000
 &type=buy
 ```
-计算签名，将以下两个参数传入加密哈希函数：
-要进行签名计算的字符串
+计算签名，将以下两个参数传入加密哈希函数： 要进行签名计算的字符串
+
+**示例：**
 
 ```json
 GET\n
@@ -155,7 +161,10 @@ SecretKeyHotcoin123456789
 2oEC+yhkHTsNkgPUq4ZB/5mlY7EZAtUDWOQ5EO01D+I=
 
 将上述值作为参数Signature的取值添加到 API 请求中。 将此参数添加到请求时，必须将该值进行 URI 编码。
+
 最终，发送到服务器的 API 请求应该为：
+
+**示例：**
 
 ```json
 https://api.hotcoinfin.com/v1/order/place
