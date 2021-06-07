@@ -87,7 +87,7 @@ Successfully installed addressable-2.7.0
 Parsing documentation for addressable-2.7.0
 Installing ri documentation for addressable-2.7.0
 
-### json代码
+### json
 ```json
 curl "https://api.huobi.pro/v2/account/deposit/address?currency=btc"
 ```
