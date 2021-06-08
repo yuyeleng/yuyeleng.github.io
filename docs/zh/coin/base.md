@@ -18,7 +18,7 @@ sort: 2 # follow a certain sequence of letters or numbers
 - [获取用户余额 /v1/balance](#获取用户余额)
 - [杠杆下单（暂未开放） /v1/order/leverorder](#杠杆下单（暂未开放）)
 - [订单取消（暂未开放） /v1/order/levercancel](#订单取消（暂未开放）)
-- [获取用户余额 /v1/leverbalance](#获取用户余额)
+- [获取余额 /v1/leverbalance](#获取用户余额)
 
 ### 获取所有交易对
 
@@ -769,7 +769,7 @@ symbol|y|string|币种symbol
 shortName|y|string|币种简称
 
 
-### 杠杆下单（暂未开放）
+#### 杠杆下单（暂未开放）
 
 
 - POST /v1/order/leverorder
@@ -818,7 +818,7 @@ data|y|object|数据||
 ID|y|bigint|订单id||
 
 
-### 订单取消（暂未开放）
+####  订单取消（暂未开放）
 
 
 - POST /v1/order/levercancel
@@ -853,7 +853,7 @@ msg|y|string|返回消息
 time|y|long|当前毫秒数
 
 
-### 获取用户余额
+####  获取余额
 
 - POST /v1/leverbalance
 
