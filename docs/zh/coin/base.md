@@ -571,7 +571,7 @@ code|y|int|状态码
 msg|n|string|返回消息
 data|y|object|
 
-### 批量撤单(Open Orders)
+### 批量撤单OpenOrders
 
 
 - POST /v1/order/batchCancelOpenOrders
