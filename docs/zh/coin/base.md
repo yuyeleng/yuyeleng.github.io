@@ -91,6 +91,7 @@ maxOrderCount|decimal|交易对最大下单量 (下单量指当订单类型为�
 minOrderPrice|decimal|最小下单价格（下单金额指当订单类型为限价单时，下单接口传入的‘price’）|min order price
 maxOrderPrice|decimal|最大下单价格（下单金额指当订单类型为限价单时，下单接口传入的‘price’）|max order price
 
+&nbsp;
 
 ### 下单
 
@@ -185,7 +186,7 @@ msg|y|string|消息||
 time|y|long|当前毫秒数||
 
 
-
+&nbsp;
 
 ### 委单详情
 
@@ -262,8 +263,10 @@ statusCode|y|int|状态码| |1 未成交 2 部分成交 3 完全成交 4 撤单�
 status|y|int|状态| |未成交、部分成交、完全成交、撤单处理中、已撤销
 
 
-### 成交详情
+&nbsp;
 
+
+### 成交详情
 
 
 - GET /v1/order/counterpartiesById
@@ -336,9 +339,9 @@ createTime|y|string|创建时间||
 
 
 
+&nbsp;
+
 ### 获取委单列表
-
-
 
 
 - GET /v1/order/entrust
@@ -472,9 +475,9 @@ type|y|int|委单类型||	0( "买单"),1( "卖单")
 buysymbol|y|string|币种类型符号
 sellsymbol|y|string|币种类型符号
 
+&nbsp;
+
 ### 当前和历史成交记录
-
-
 
 - GET /v1/order/matchresults
 
@@ -553,8 +556,9 @@ type|y|string|订单类型||0：买, 1：卖
 role|y|string|成交角色||taker,maker
 
 
-### 批量撤单
+&nbsp;
 
+### 批量撤单
 
 - POST /v1/order/batchCancelOrders
 
@@ -573,6 +577,8 @@ orderIds|y|String|撤销订单ID列表||单次不超过100个订单id 例如 "22
 code|y|int|状态码
 msg|n|string|返回消息
 data|y|object|
+
+&nbsp;
 
 ### 批量撤单(OpenOrders)
 
@@ -614,7 +620,7 @@ data|y|object|
 {successCount|y|int|成功撤销数量
 failCount}|y|int|撤销失败数量
 
-
+&nbsp;
 
 ### 批量下单
 
@@ -679,9 +685,9 @@ errcode|n|string|返回错误码
 errmsg}]|n|string|返回错误描述
 
 
+&nbsp;
 
 ### 获取用户余额
-
 
 - GET /v1/balance
 
@@ -768,6 +774,7 @@ frozen|y|number|冻结
 symbol|y|string|币种symbol
 shortName|y|string|币种简称
 
+&nbsp;
 
 #### 杠杆下单（暂未开放）
 
@@ -818,8 +825,9 @@ data|y|object|数据||
 ID|y|bigint|订单id||
 
 
-####  订单取消（暂未开放）
+&nbsp;
 
+####  订单取消（暂未开放）
 
 - POST /v1/order/levercancel
 
@@ -852,6 +860,8 @@ code|y|int|状态码||成功：200，失败：300
 msg|y|string|返回消息
 time|y|long|当前毫秒数
 
+
+&nbsp;
 
 ####  获取余额
 
