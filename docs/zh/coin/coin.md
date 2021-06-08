@@ -40,8 +40,8 @@ AccessKey为API 访问密钥，SecretKey为用户对请求进行签名的密钥�
 6. 签名计算得出的值，用于确保签名有效和未被篡改。
 
 **示例：**
-```json
-https://api.hotcoinfin.com/v1/order/place?
+
+> https://api.hotcoinfin.com/v1/order/place?
 AccessKeyId=AccessKeyHotcoin123456789
 &symbol=btc_gavc
 &type=buy
@@ -51,7 +51,7 @@ AccessKeyId=AccessKeyHotcoin123456789
 &SignatureVersion=2
 &Timestamp=2017-05-11T16:22:06.123Z
 &Signature=calculated value
-```
+
 
 
 ### 签名运算
