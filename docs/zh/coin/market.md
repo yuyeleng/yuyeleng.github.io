@@ -10,6 +10,7 @@ sort: 3 # follow a certain sequence of letters or numbers
 - [获取深度数据 /v1/depth](#获取深度数据)
 - [获取实时成交数据 /v1/trade](#获取实时成交数据)
 
+&nbsp;
 
 ### 实时ticker数据
 
@@ -56,6 +57,8 @@ high|y|number|24小时最高价 ||
 low|y|number|24小时最低价||
 vol|y|number|24小时成交量||
 change|y|number|24小时涨跌幅||
+
+&nbsp;
 
 ### 获取k线数据
 
@@ -116,6 +119,7 @@ data|y|array(array(number))|K线数据
 ......<br>
 ]<br>
 
+&nbsp;
 
 ### 获取深度数据
 
@@ -220,6 +224,8 @@ marketFrom|y|string|入参symbol
 coinVol|y|string|入参symbol
 type|y|long|入参step,时间
 data|y|array（array）|最后一个k线数据，格式同上，但只有一个
+
+&nbsp;
 
 ### 获取实时成交数据
 
