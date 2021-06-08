@@ -42,7 +42,6 @@ data|y|array|symbols列表||
 
 **data：**
 
-&nbsp;
 
 ```json
 {
@@ -112,6 +111,7 @@ tradeAmount|y|number|数量||
 tradePrice|y|number	|价钱||
 
 
+
 **返回字段：**
 
 ```json
@@ -148,7 +148,7 @@ data|y|object|数据||
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 ID|y|bigint|订单id||
 
-
+&nbsp;
 
 ### 订单取消
 
