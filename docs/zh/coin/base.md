@@ -13,7 +13,7 @@ sort: 2 # follow a certain sequence of letters or numbers
 - [获取委单列表 /v1/order/entrust](#获取委单列表)
 - [当前和历史成交记录 /v1/order/matchresults](#当前和历史成交记录)
 - [批量撤单 /v1/order/batchCancelOrders](#批量撤单)
-- [批量撤单OpenOrders /v1/order/batchCancelOpenOrders](#批量撤单OpenOrders)
+- [批量撤单(OpenOrders) /v1/order/batchCancelOpenOrders](#批量撤单(OpenOrders))
 - [批量下单 /v1/order/batchOrders](#批量下单)
 - [获取用户余额 /v1/balance](#获取用户余额)
 
@@ -571,7 +571,7 @@ code|y|int|状态码
 msg|n|string|返回消息
 data|y|object|
 
-### 批量撤单OpenOrders
+### 批量撤单(OpenOrders)
 
 
 - POST /v1/order/batchCancelOpenOrders
