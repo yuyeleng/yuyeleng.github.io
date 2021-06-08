@@ -38,7 +38,10 @@ msg|y|string|消息||
 time|y|long|当前毫秒数||
 data|y|array|symbols列表||
 
+&nbsp;
+
 **data：**
+
 &nbsp;
 
 ```json
