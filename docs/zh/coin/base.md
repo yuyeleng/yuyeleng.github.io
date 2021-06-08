@@ -29,21 +29,7 @@ data|y|array|symbols列表||
 
 **data结构**
 
-字段类型|数据类型|描述|description（英文）
-------------- | ------------- |  ------------- | ------------
-baseCurrency|string|交易中的基础币种|baseCurrency code
-quoteCurrency|string|交易中的报价币种|quoteCurrency code
-pricePrecision|integer|交易对报价的精度（小数点后位数）|price precision
-amountPrecision|integer|交易对基础币种计数精度（小数点)|quantity precision
-symbolPartition|string|交易区，可能值: [main,innovation]|symbol Partition, example:[main,innovation]
-symbol|string|交易对|trade pair code
-state|string|交易对状态 enable - 正常；disable-禁用|trade pair status [enable,disable]
-minOrderCount|decimal|交易对最小下单量 (下单量指当订单类型为限价单时，下单接口传的'tradeAmount')|min order count
-maxOrderCount|decimal|交易对最大下单量 (下单量指当订单类型为限价单时，下单接口传的'tradeAmount')|max order count
-minOrderPrice|decimal|最小下单价格（下单金额指当订单类型为限价单时，下单接口传入的‘price’）|min order price
-maxOrderPrice|decimal|最大下单价格（下单金额指当订单类型为限价单时，下单接口传入的‘price’）|max order price
-
-返回json示例
+<p class='custom-code-title'>返回json示例</p>
 
 ```json
 {
@@ -78,6 +64,21 @@ maxOrderPrice|decimal|最大下单价格（下单金额指当订单类型为限�
   ]
 }
 ```
+
+字段类型|数据类型|描述|description（英文）
+------------- | ------------- |  ------------- | ------------
+baseCurrency|string|交易中的基础币种|baseCurrency code
+quoteCurrency|string|交易中的报价币种|quoteCurrency code
+pricePrecision|integer|交易对报价的精度（小数点后位数）|price precision
+amountPrecision|integer|交易对基础币种计数精度（小数点)|quantity precision
+symbolPartition|string|交易区，可能值: [main,innovation]|symbol Partition, example:[main,innovation]
+symbol|string|交易对|trade pair code
+state|string|交易对状态 enable - 正常；disable-禁用|trade pair status [enable,disable]
+minOrderCount|decimal|交易对最小下单量 (下单量指当订单类型为限价单时，下单接口传的'tradeAmount')|min order count
+maxOrderCount|decimal|交易对最大下单量 (下单量指当订单类型为限价单时，下单接口传的'tradeAmount')|max order count
+minOrderPrice|decimal|最小下单价格（下单金额指当订单类型为限价单时，下单接口传入的‘price’）|min order price
+maxOrderPrice|decimal|最大下单价格（下单金额指当订单类型为限价单时，下单接口传入的‘price’）|max order price
+
 
 ### 下单
 
