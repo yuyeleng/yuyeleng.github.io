@@ -3,7 +3,7 @@ sort: 2 # follow a certain sequence of letters or numbers
 ---
 # baseInfo
 
-### API明细
+### API明细 2
 
 - [获取所有交易对 /v1/common/symbols](#获取所有交易对)
 - [下单 /v1/order/place](#下单)
