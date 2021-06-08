@@ -103,7 +103,7 @@ msg|n|string|返回消息
 time|y|long|当前毫秒数
 data|y|array(array(number))|K线数据
 
-data<br>
+**data**<br>
 
 [[ <br>
 1527820200000,   //int 时间<br>
@@ -203,7 +203,7 @@ data|y|object|交易深度数据
 depth|y|object
 period|n|object|传step时才有值
 
-depth
+**depth**
 
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
@@ -212,7 +212,7 @@ asks|y|array(array(long))|卖盘,[price(成交价), amount(成交量)]
 date|y|long|时间戳
 lastPrice|y|number|最新成交价
 
-period
+**period**
 
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
