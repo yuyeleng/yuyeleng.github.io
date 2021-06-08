@@ -16,9 +16,6 @@ sort: 2 # follow a certain sequence of letters or numbers
 - [批量撤单(Open Orders) /v1/order/batchCancelOpenOrders](#批量撤单(Open Orders))
 - [批量下单 /v1/order/batchOrders](#批量下单)
 - [获取用户余额 /v1/balance](#获取用户余额)
-- [杠杆下单（暂未开放） /v1/order/leverorder](#杠杆下单（暂未开放）)
-- [订单取消（暂未开放） /v1/order/levercancel](#订单取消（暂未开放）)
-- [获取余额 /v1/leverbalance](#获取用户余额)
 
 ### 获取所有交易对
 
