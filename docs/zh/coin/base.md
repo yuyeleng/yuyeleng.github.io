@@ -17,7 +17,7 @@ sort: 2 # follow a certain sequence of letters or numbers
 - [批量下单 /v1/order/batchOrders](#批量下单)
 - [获取用户余额 /v1/balance](#获取用户余额)
 
-### 获取所有交易对
+### 获取所有交易对  
 
 ```json
 https://hkapi.hotcoin.top/v1/common/symbols
@@ -25,11 +25,11 @@ https://hkapi.hotcoin.top/v1/common/symbols
 curl "https://hkapi.hotcoin.top/v1/common/symbols"
 ```
 
-- GET /v1/common/symbols
+- GET /v1/common/symbols  
 
-**请求参数：** 
+**请求参数：**   
 
-**返回字段：**
+**返回字段：**  
 
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
