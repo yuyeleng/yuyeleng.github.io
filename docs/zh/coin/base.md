@@ -4,10 +4,21 @@ sort: 2 # follow a certain sequence of letters or numbers
 # 基础信息
 
 ### API明细
+
 - [获取所有交易对 /v1/common/symbols](#获取所有交易对)
-- [获取k线数据 /v1/ticker](#获取k线数据)
-- [获取深度数据 /v1/depth](#获取深度数据)
-- [获取实时成交数据 /v1/trade](#获取实时成交数据)
+- [下单 /v1/order/place](#下单)
+- [订单取消 /v1/order/cancel](#订单取消)
+- [委单详情 /v1/order/detailById](#委单详情)
+- [成交详情 /v1/order/counterpartiesById](#成交详情)
+- [获取委单列表 /v1/order/entrust](#获取委单列表)
+- [当前和历史成交记录 /v1/order/matchresults](#当前和历史成交记录)
+- [批量撤单 /v1/order/batchCancelOrders](#批量撤单)
+- [批量撤单(Open Orders) /v1/order/batchCancelOpenOrders](#批量撤单(Open Orders))
+- [批量下单 /v1/order/batchOrders](#批量下单)
+- [获取用户余额 /v1/balance](#获取用户余额)
+- [杠杆下单（暂未开放） /v1/order/leverorder](#杠杆下单（暂未开放）)
+- [订单取消（暂未开放） /v1/order/levercancel](#订单取消（暂未开放）)
+- [获取用户余额 /v1/leverbalance](#获取用户余额)
 
 ### 获取所有交易对
 
@@ -761,7 +772,6 @@ shortName|y|string|币种简称
 ### 杠杆下单（暂未开放）
 
 
-
 - POST /v1/order/leverorder
 
 **请求参数：**
@@ -811,7 +821,6 @@ ID|y|bigint|订单id||
 ### 订单取消（暂未开放）
 
 
-
 - POST /v1/order/levercancel
 
 **请求参数：**
@@ -844,9 +853,7 @@ msg|y|string|返回消息
 time|y|long|当前毫秒数
 
 
-### 获取用户余额：
-
-
+### 获取用户余额
 
 - POST /v1/leverbalance
 
