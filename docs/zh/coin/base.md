@@ -173,3 +173,157 @@ time|y|long|当前毫秒数||
    "data": null
 }
 ```
+
+
+
+### 委单详情
+
+**HTTP 请求**
+
+- GET /v1/order/detailById
+
+
+**请求参数：**
+
+参数名称|是否必须|类型|描述|默认值|取值范围
+------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
+AccessKeyId|y|string|访问key	|||
+SignatureVersion|y|string|版本|| |
+SignatureMethod|y|string|签名方法| |HmacSHA256
+Signature|y|string|ApiSecret||
+Timestamp|y|string|时间戳||
+id|y|bigint	|委单id	| |
+leverAcctid	|n|string	|非杠杆下单无需传词字段，杠杆子账户id，对应开户接口的clientId| |
+
+**返回字段：**
+
+参数名称|是否必须|类型|描述|默认值|取值范围
+------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
+code|y|int|状态码||
+msg|n|string|消息||
+time|y|long|当前毫秒数||
+data|y|object|委单详情||
+
+**data：**
+
+参数名称|是否必须|类型|描述|默认值|取值范围
+------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
+types|y|string|委单类型| |买单 、卖单
+leftcount|y|number|未成交||
+fees|y|number|手续费||
+last|y|number|当前委单最新成交价||
+count|y|number|数量||
+successamount|y|number|已成交总价	||
+source|y|string|来源	| |API、WEB、APP
+type|y|int|类型代码| |0（买单），1（卖单）
+price|y|number|价钱	||
+buysymbol|n|string|买符号||
+sellsymbol|n|string|卖符号||
+time|y|string|创建时间||
+statusCode|y|int|状态码| |1 未成交 2 部分成交 3 完全成交 4 撤单处理中 5 已撤销
+status|y|int|状态| |未成交、部分成交、完全成交、撤单处理中、已撤销
+
+返回json
+
+```json
+{
+  "code": 200,
+  "msg": "成功",
+  "time": 1536306896294,
+  "data":    {
+    "types": "买单",
+    "leftcount": 0.01,
+    "fees": 0,
+    "last": 0,
+    "count": 0.01,
+    "successamount": 0,
+    "source": "API",
+    "type": 0,
+    "price": 40000,
+    "buysymbol": "",
+    "id": 18194814,
+    "time": "2018-09-07 15:48:44",
+    "sellsymbol": "",
+    "statusCode":1,
+    "status": "未成交"
+  }
+}
+
+```
+
+
+### 成交详情
+
+**HTTP 请求**
+
+- GET /v1/order/counterpartiesById
+
+**请求参数：**
+
+参数名称|是否必须|类型|描述|默认值|取值范围
+------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
+AccessKeyId|y|string|访问key	|||
+SignatureVersion|y|string|版本|| |
+SignatureMethod|y|string|签名方法| |HmacSHA256
+Signature|y|string|ApiSecret||
+Timestamp|y|string|时间戳||
+id|y|bigint	|委单id	| |
+
+**返回字段：**
+
+参数名称|是否必须|类型|描述|默认值|取值范围
+------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
+code|y|int|状态码||
+msg|n|string|消息||
+time|y|long|当前毫秒数||
+data|y|object|委单详情||
+
+**data：**
+
+参数名称|是否必须|类型|描述|默认值|取值范围
+------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
+entrusts|y|array(object)|对手单列表||
+
+**wallet：**
+
+参数名称|是否必须|类型|描述|默认值|取值范围
+------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
+id|y|bigint|主键ID||
+isSelfTrade|y|int|是否自成交 0 否 1 是||
+sysmbol|y|string|交易对||
+entrustType|y|int|委单类型 0 买单 1 卖单||
+entrustId|y|bigint|委单ID||
+matchId|y|bigint|成交ID||
+amount|y|number|成交总价||
+prize|y|number|价格||
+count|y|number|数量||
+createTime|y|string|创建时间||
+
+
+返回json
+
+```json
+{
+  "code":200,
+  "data":{
+    "entrusts":[
+      {
+        "amount":1.2042000000,
+        "count":2.2300000000,
+        "createTime":"2019-05-27 18:15:12",
+        "entrustId":431879850,
+        "entrustType":0,
+        "id":101192723,
+        "isSelfTrade":1,
+        "matchId":431879852,
+        "prize":0.5400000000,
+        "sysmbol":"btc_gavc"
+      }
+    ]
+  },
+  "msg":"成功",
+  "time":1568690580787
+}
+
+
+```
