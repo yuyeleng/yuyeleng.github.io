@@ -2,6 +2,13 @@
 sort: 2 # follow a certain sequence of letters or numbers
 ---
 # 基础信息
+
+### API明细
+- [获取所有交易对 /v1/common/symbols](#获取所有交易对)
+- [获取k线数据 /v1/ticker](#获取k线数据)
+- [获取深度数据 /v1/depth](#获取深度数据)
+- [获取实时成交数据 /v1/trade](#获取实时成交数据)
+
 ### 获取所有交易对
 
 ```json
@@ -9,8 +16,6 @@ https://hkapi.hotcoin.top/v1/common/symbols
 
 curl "https://hkapi.hotcoin.top/v1/common/symbols"
 ```
-
-**HTTP 请求**   
 
 - GET /v1/common/symbols
 
@@ -79,8 +84,6 @@ maxOrderPrice|decimal|最大下单价格（下单金额指当订单类型为限�
 
 ### 下单
 
-**HTTP 请求**
-
 - POST /v1/order/place
 
 **请求参数：**
@@ -140,8 +143,6 @@ ID|y|bigint|订单id||
 
 注：撤销订单请求为异步报单模式，需要调用/v1/order/detailById接口查询订单状态进行确认。
 
-**HTTP 请求**
-
 - POST /v1/order/cancel
 
 **请求参数：**
@@ -177,7 +178,7 @@ time|y|long|当前毫秒数||
 
 ### 委单详情
 
-**HTTP 请求**
+
 
 - GET /v1/order/detailById
 
@@ -252,7 +253,7 @@ status|y|int|状态| |未成交、部分成交、完全成交、撤单处理中�
 
 ### 成交详情
 
-**HTTP 请求**
+
 
 - GET /v1/order/counterpartiesById
 
@@ -327,7 +328,7 @@ createTime|y|string|创建时间||
 ### 获取委单列表
 
 
-**HTTP 请求**
+
 
 - GET /v1/order/entrust
 
@@ -462,7 +463,7 @@ sellsymbol|y|string|币种类型符号
 
 ### 当前和历史成交记录
 
-**HTTP 请求**
+
 
 - GET /v1/order/matchresults
 
@@ -542,7 +543,7 @@ role|y|string|成交角色||taker,maker
 
 
 ### 批量撤单
-**HTTP 请求**
+
 
 - POST /v1/order/batchCancelOrders
 
@@ -563,7 +564,7 @@ msg|n|string|返回消息
 data|y|object|
 
 ### 批量撤单(Open Orders)
-**HTTP 请求**
+
 
 - POST /v1/order/batchCancelOpenOrders
 
@@ -608,7 +609,7 @@ failCount}|y|int|撤销失败数量
 
 API Key 权限：交易 ,一个批量最多10张订单
 
-**HTTP 请求**
+
 
 - POST /v1/order/batchOrders
 
@@ -669,7 +670,7 @@ errmsg}]|n|string|返回错误描述
 
 
 ### 获取用户余额
-**HTTP 请求**
+
 
 - GET /v1/balance
 
@@ -757,9 +758,9 @@ symbol|y|string|币种symbol
 shortName|y|string|币种简称
 
 
-### 杠杆下单（暂未开放）：
+### 杠杆下单（暂未开放）
 
-**HTTP 请求**
+
 
 - POST /v1/order/leverorder
 
@@ -807,9 +808,9 @@ data|y|object|数据||
 ID|y|bigint|订单id||
 
 
-### 订单取消（暂未开放）：
+### 订单取消（暂未开放）
 
-**HTTP 请求**
+
 
 - POST /v1/order/levercancel
 
@@ -845,7 +846,7 @@ time|y|long|当前毫秒数
 
 ### 获取用户余额：
 
-**HTTP 请求**
+
 
 - POST /v1/leverbalance
 
