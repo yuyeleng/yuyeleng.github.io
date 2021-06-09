@@ -2,7 +2,7 @@
 sort: 1 # follow a certain sequence of letters or numbers
 ---
 # 简介
-欢迎使用热币 API！
+欢迎使用热币 API！  
 此文档是热币API的唯一官方文档，热币API提供的功能和服务会在此文档持续更新，并会发布公告进行通知，建议您关注和订阅我们的公告，及时获取相关信息。
 
 以下是现货API文档各章节主要内容:
@@ -18,7 +18,7 @@ sort: 1 # follow a certain sequence of letters or numbers
 ### 安全认证
 AccessKey为API 访问密钥，SecretKey为用户对请求进行签名的密钥。 重要提示：这两个密钥与账号安全紧密相关，无论何时都请勿向其它人透露
 
-<b>SDK示例（推荐）</b>
+<b>示例</b>
 
  [Java](https://github.com/hotcoinex/openapi/blob/master/ApiDemo.java)  | [Python3](https://github.com/hotcoinex/openapi/blob/master/ApiDemo.py) |  [Php](https://github.com/hotcoinex/openapi/blob/master/Demo.php)
 

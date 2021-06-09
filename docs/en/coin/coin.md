@@ -1,43 +1,48 @@
 ---
 sort: 1 # follow a certain sequence of letters or numbers
 ---
-# 简介
-欢迎使用热币 API！
-此文档是热币API的唯一官方文档，热币API提供的功能和服务会在此文档持续更新，并会发布公告进行通知，建议您关注和订阅我们的公告，及时获取相关信息。
+# Introduction
 
-以下是现货API文档各章节主要内容:
+Welcome to Hotcoin API！
 
-### 接入准备
-如需使用API ，请先登录网页端，完成API key的申请和权限配置，再据此文档详情进行开发和交易。
+This is the official Hotcoin API document, and will be continue updating. Huobi will also publish API announcement in advance for any API change. Please subscribe to our announcements so that you can get the latest updates.
 
-权限说明如下：
-* **读取权限**：读取权限用于对数据的查询接口，例如：订单查询、成交查询等。
-* **交易权限**：交易权限用于下单、撤单、划转类接口。
-* **提币权限**：提币权限用于创建提币订单、取消提币订单操作。
+Below is the content for Spot API document:
 
-### 安全认证
-AccessKey为API 访问密钥，SecretKey为用户对请求进行签名的密钥。 重要提示：这两个密钥与账号安全紧密相关，无论何时都请勿向其它人透露
+### Access Instructions
 
-<b>SDK示例（推荐）</b>
+Before you use API, you need to login the website to create API Key with proper permissions. The API key is shared for all instruments in Huobi including spot, futures, swap, options.  
+
+The permissions are described as follows:
+* **Read permission**:It is used to query the data, such as order query, trade query.
+* **Trade permission**:It is used to create order, cancel order and transfer, etc.
+* **Withdraw permission**:It is used to create withdraw order, cancel withdraw order, etc.
+
+### Security Authentication
+
+AccessKey is the access key to API,SecretKey is the secret key of user signature for requests. Important note: These two keys are closely related to account security, and should not be disclosed to others at any time  
+
+<b>Demo</b>
 
  [Java](https://github.com/hotcoinex/openapi/blob/master/ApiDemo.java)  | [Python3](https://github.com/hotcoinex/openapi/blob/master/ApiDemo.py) |  [Php](https://github.com/hotcoinex/openapi/blob/master/Demo.php)
 
 
-### 合法请求结构
-基于安全考虑，除行情API 外的 API 请求都必须进行签名运算。一个合法的请求由以下几部分组成：
+### Legal request structure
 
-- 方法请求地址,即访问服务器地址：api.hotcoinfin.com后面跟上方法名，比如api.hotcoinfin.com/v1/order/place。 
+Based on the consideration of security, all API request must be calculated by signature algorithm except market API. A legel request consists of below parts:  
 
-- API 访问密钥（AccessKeyId） 您申请的 APIKEY 中的AccessKey。
 
-- 签名方法（SignatureMethod） 用户计算签名的基于哈希的协议，此处使用 HmacSHA256。
+- Request-URI Method, i.e. the address access to server: hkapi.hotcoin.top followed by method name, take hkapi.hotcoin.top/v1/order/place for instance. 
+
+- API AccessKeyId is the The AccessKey in the APIKEY you requested.
+
+- Signature Method is the hash-based protocol of calculating signatures by users, HmacSHA256 is applied here.
   
-- 签名版本（SignatureVersion） 签名协议的版本，此处使用2。
+- SignatureVersion is the version of the signature protocol, 2 is applied here.
 
-- 时间戳（Timestamp） 您发出请求的时间 (UTC 时区)。在查询请求中包含此值有助于防止第三方截取您的请求。如：2017-05-11T16:22:06.123Z。再次强调是 (UTC 时区)
-调用的必需参数和可选参数。可以在每个方法的说明中查看这些参数及其含义。
+- Timestamp is the time you made the request (UTC Time Zone). Including the value in query request helps preventing third parties from interception of your request.For example：2017-05-11T16:22:06.123Z。Again,(UTC Time Zone) is stressed here.For required parameters and optional parameters ,these parameters and their meanings can be viewed in the description of each method.
 
-- 签名计算得出的值，用于确保签名有效和未被篡改。
+- Signature the value calculated by signature is used for ensuring that the signature is valid and not tampered.  
 
 
 > https://api.hotcoinfin.com/v1/order/place?  
@@ -53,7 +58,7 @@ AccessKeyId=AccessKeyHotcoin123456789
 
 
 
-### 签名运算
+### Signature Algorithm
 API 请求在通过 Internet 发送的过程中极有可能被篡改。为了确保请求未被更改，我们会要求用户在每个请求中带上签名，来校验参数或参数值在传输途中是否发生了更改。
 
 计算签名所需的步骤：
