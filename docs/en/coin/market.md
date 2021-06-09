@@ -3,13 +3,6 @@ sort: 3 # follow a certain sequence of letters or numbers
 ---
 # 行情接口
 
-### API明细
-
-- [实时ticker数据 /v1/market/ticker](#实时ticker数据)
-- [获取k线数据 /v1/ticker](#获取k线数据)
-- [获取深度数据 /v1/depth](#获取深度数据)
-- [获取实时成交数据 /v1/trade](#获取实时成交数据)
-
 &nbsp;
 
 ### 实时ticker数据

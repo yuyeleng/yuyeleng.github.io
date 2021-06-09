@@ -40,7 +40,7 @@ Based on the consideration of security, all API request must be calculated by si
   
 - SignatureVersion is the version of the signature protocol, 2 is applied here.
 
-- Timestamp is the time you made the request (UTC Time Zone). Including the value in query request helps preventing third parties from interception of your request.For example：2017-05-11T16:22:06.123Z。Again,(UTC Time Zone) is stressed here.For required parameters and optional parameters ,these parameters and their meanings can be viewed in the description of each method.
+- Timestamp is the time you made the request (UTC Time Zone). Including the value in query request helps preventing third parties from interception of your request.For example：2017-05-11T16:22:06.123Z.Again,(UTC Time Zone) is stressed here.For required parameters and optional parameters ,these parameters and their meanings can be viewed in the description of each method.
 
 - Signature the value calculated by signature is used for ensuring that the signature is valid and not tampered.  
 
@@ -59,12 +59,14 @@ AccessKeyId=AccessKeyHotcoin123456789
 
 
 ### Signature Algorithm
-API 请求在通过 Internet 发送的过程中极有可能被篡改。为了确保请求未被更改，我们会要求用户在每个请求中带上签名，来校验参数或参数值在传输途中是否发生了更改。
+API request can be tempered at great risk while it is sent through the Internet. To ensure that the request is not tempered, we will require users to sign in every request (except market API) for verifying the authticity of parameters or the values of parameters.  
 
-计算签名所需的步骤：
-规范要计算签名的请求
-因为使用 HMAC 进行签名计算时，使用不同内容计算得到的结果会完全不同。所以在进行签名计算前，请先对请求进行规范化处理。下面以下单请求为例进行说明 
 
+Sign Steps:  
+
+Standards for Requests of Calculating Signatures:  
+
+Establish a standard for requests of calculating signatures because when using HMAC to calculate signature, total different results will be achieved as different contents are calculated. So before calculating signatures, please make a standard. Examples of the request of order placement will be given as follows.
 
 >https://api.hotcoinfin.com/v1/order/place?  
 AccessKeyId=AccessKeyHotcoin123456789  
@@ -76,20 +78,21 @@ AccessKeyId=AccessKeyHotcoin123456789
 &tradePrice=40000  
 &tradeAmount=0.1  
 
-请求方法（GET 或 POST），后面添加换行符\n。
+The request Method (GET or POST, WebSocket use GET), append line break "\n"  
 
 GET\n
 
-添加小写的访问地址，后面添加换行符\n。
+The host with lower case, append line break \n.
 
-api.hotcoinfin.com\n
+api.hotcoinfin.com\n.
 
-访问方法的路径，后面添加换行符\n。
+The path, append line break "\n"
 
 /v1/order/place\n
 
-按照ASCII码的顺序对参数名进行排序(使用 UTF-8 编码，且进行了 URI 编码，十六进制字符必须大写，如‘:’会被编码为'%3A'，空格被编码为'%20')。
-例如，下面是请求参数的原始顺序，进行过编码后。
+Sorting parameters by order of ASCII code (Encoding by UTF-8 format and URI format，hexadecimal characters must be capitalized，for example‘:’ will be encoded as '%3A'，space key will be encoded as '%20').  
+
+For example，here is the original order of the request parameters after encoded.
 
 
 >AccessKeyId=AccessKeyHotcoin123456789  
@@ -101,7 +104,7 @@ api.hotcoinfin.com\n
 &tradePrice=40000  
 &tradeAmount=0.1  
 
-这些参数会被排序为：
+Above parameter should be ordered like below:
 
 >AccessKeyId=AccessKeyHotcoin123456789  
 SignatureMethod=HmacSHA256  
@@ -112,7 +115,18 @@ tradeAmount=0.01
 tradePrice=40000  
 type=buy  
 
-按照以上顺序，将各参数使用字符’&’连接。 组成最终的要进行签名计算的字符串如下：
+Use char “&” to concatenate all parameters.
+
+>AccessKeyId=AccessKeyHotcoin123456789  
+&SignatureMethod=HmacSHA256  
+&SignatureVersion=2  
+&Timestamp=2017-05-11T16%3A22%3A06.123Z  
+&symbol=btc_gavc  
+&tradeAmount=0.1  
+&tradePrice=40000  
+&type=buy
+
+The final strings for signature calculation is as follows:
 
 
 >GET\n  
@@ -128,7 +142,9 @@ AccessKeyId=AccessKeyHotcoin123456789
 &type=buy  
 
 
-计算签名，将以下两个参数传入加密哈希函数： 要进行签名计算的字符串
+Calculation of signature algorithm,transfer the following two parameters to the cryptographic hash function:  
+
+Strings for signature calculation  
 
 >GET\n  
 api.hotcoinfin.com\n  
@@ -142,20 +158,20 @@ AccessKeyId=AccessKeyHotcoin123456789
 &tradePrice=40000  
 &type=buy  
 
-进行签名的密钥（SecretKey）
+SecretKey for execute signature
 
 SecretKeyHotcoin123456789
 
-得到签名计算结果并进行 Base64编码
+Obtained result of signature calculation and encoded with Base64
 
 2oEC+yhkHTsNkgPUq4ZB/5mlY7EZAtUDWOQ5EO01D+I=
 
-将上述值作为参数Signature的取值添加到 API 请求中。 将此参数添加到请求时，必须将该值进行 URI 编码。
-
-symbol 规则： 基础币种+计价币种。如BTC/USDT，symbol为btc_usdt；ETH/BTC， symbol为eth_btc。以此类推。
+Add the above values as the value of parameter Signature to the API request. The value must be encoded with URI when this parameter is added to the request.  
 
 
-最终，发送到服务器的 API 请求应该为：
+symbol rules：base currency + quote currency.In BTC/USDT，symbol is btc_usdt；While in ETH/BTC， symbol is eth_btc, and so on.  
+
+Finally, the API request sent to the server should be：
 
 >https://api.hotcoinfin.com/v1/order/place  
 ?AccessKeyId=AccessKeyHotcoin123456789  

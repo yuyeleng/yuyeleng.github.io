@@ -83,7 +83,8 @@ api.hotcoinfin.com\n
 
 /v1/order/place\n
 
-按照ASCII码的顺序对参数名进行排序(使用 UTF-8 编码，且进行了 URI 编码，十六进制字符必须大写，如‘:’会被编码为'%3A'，空格被编码为'%20')。
+按照ASCII码的顺序对参数名进行排序(使用 UTF-8 编码，且进行了 URI 编码，十六进制字符必须大写，如‘:’会被编码为'%3A'，空格被编码为'%20')。  
+
 例如，下面是请求参数的原始顺序，进行过编码后。
 
 
@@ -107,7 +108,19 @@ tradeAmount=0.01
 tradePrice=40000  
 type=buy  
 
-按照以上顺序，将各参数使用字符’&’连接。 组成最终的要进行签名计算的字符串如下：
+按照以上顺序，将各参数使用字符’&’连接。  
+
+>AccessKeyId=AccessKeyHotcoin123456789  
+&SignatureMethod=HmacSHA256  
+&SignatureVersion=2  
+&Timestamp=2017-05-11T16%3A22%3A06.123Z  
+&symbol=btc_gavc  
+&tradeAmount=0.1  
+&tradePrice=40000  
+&type=buy
+
+
+组成最终的要进行签名计算的字符串如下：
 
 
 >GET\n  
@@ -123,7 +136,9 @@ AccessKeyId=AccessKeyHotcoin123456789
 &type=buy  
 
 
-计算签名，将以下两个参数传入加密哈希函数： 要进行签名计算的字符串
+计算签名，将以下两个参数传入加密哈希函数：  
+
+要进行签名计算的字符串
 
 >GET\n  
 api.hotcoinfin.com\n  
