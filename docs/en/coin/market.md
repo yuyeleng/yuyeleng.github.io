@@ -1,25 +1,25 @@
 ---
 sort: 3 # follow a certain sequence of letters or numbers
 ---
-# 行情接口
+# Market Interface
 
 &nbsp;
 
-### 实时ticker数据
+### Real-time Ticker data
 
 - GET /v1/market/ticker
 
 
 
-**请求参数:**
+**Request parameters:**
 
-参数名称|是否必须|类型|描述|默认值|取值范围
+Parameter|Mandatory| Data Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-status|y|string|状态码||成功：ok，失败：error
-timestamp|y|long|当前毫秒数||
-ticker|y|list|数据||
+status|y|string|Status code||success：ok，failed：error
+timestamp|y|long|Current millisseconds||
+ticker|y|list|data||
 
-**响应数据:**
+**Response data:**
 
 ```json
 {
@@ -40,16 +40,16 @@ ticker|y|list|数据||
 }
 ```
 
-参数名称|是否必须|类型|描述|默认值|取值范围
+Parameter|Mandatory| Data Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-symbol|y|string|交易对symbol||卖币种简称_买币种简称简称，eg：btc_usdt
-last|y|number|最新价||
-buy|y|number|买一价||
-sell|y|number|卖一价||
-high|y|number|24小时最高价 ||
-low|y|number|24小时最低价||
-vol|y|number|24小时成交量||
-change|y|number|24小时涨跌幅||
+symbol|y|string|Trading pair||sellShortName_buyShortName，eg：btc_usdt
+last|y|number|latest price||
+buy|y|number|buy||
+sell|y|number|sell||
+high|y|number|high ||
+low|y|number|low||
+vol|y|number|vol||
+change|y|number|change||
 
 &nbsp;
 
@@ -57,19 +57,24 @@ change|y|number|24小时涨跌幅||
 
 -  GET /v1/ticker
 
-**请求参数:**
+**Request parameters:**
 
-参数名称|是否必须|类型|描述|默认值|取值范围
+Parameter|Mandatory| Data Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-step|y|int|时间：秒||60（1分钟）,300（5分钟）,900（15分钟）,1800（30分钟）,3600（1小时）,86400（1天）,604800（1周）,2592000（1月）
-symbol|y|string|交易对||例：btc_gavc
+AccessKeyId|y|string|Access key
+SignatureVersion|y|string|Version
+SignatureMethod|y|string|Signature Method||HmacSHA256
+Signature|y|string|ApiSecret
+Timestamp|y|string|Timestamp
+step|y|int|Time：Sec||60（1min）,300（5mins）,900（15mins）,1800（30mins）,3600（1h）,86400（1d）,604800（1w）,2592000（1mon）
+symbol|y|string|pairs||btc_gavc
 
-**响应数据:**
+**Response data:**
 
 ```json
 {
   "code":200,
-  "msg":"成功",
+  "msg":"success",
   "time":1527838104874,
   "data":[
     [
@@ -92,47 +97,47 @@ symbol|y|string|交易对||例：btc_gavc
 }
 ```
 
-参数名称|是否必须|类型|描述|默认值|取值范围
+Parameter|Mandatory| Data Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-code|y|int|状态码
-msg|n|string|返回消息
-time|y|long|当前毫秒数
-data|y|array(array(number))|K线数据
+code|y|int|Status code
+msg|n|string|return message
+time|y|long|Current millisseconds
+data|y|array(array(number))|Kline data
 
 **data:**<br>
 
 [[ <br>
-1527820200000,   //int 时间<br>
-54598.5,         //number  开<br>
-54598.5,         //number  高<br>
-54598.5,         //number  低<br>
-54598.5,         //number  收<br>
-0.0000          //number  量<br>
+1527820200000,   //int time<br>
+54598.5,         //number  O<br>
+54598.5,         //number  H<br>
+54598.5,         //number  L<br>
+54598.5,         //number  C<br>
+0.0000          //number  Vol<br>
 ],<br>
 ......<br>
 ]<br>
 
 &nbsp;
 
-### 获取深度数据
+### Obtain Deep Data：
 
 
 - GET /v1/depth
 
-**请求参数:**
+**Request parameters:**
 
-参数名称|是否必须|类型|描述|默认值|取值范围
+Parameter|Mandatory| Data Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-symbol|y|string|交易对||例：btc_gavc
-step|n|int|加上此参数可查最新一个k线数据，类型为时间，单位秒||60,3*60,5*60,15*60,30*60,60*60（1小时）,24*60*60（1天）,7*24*60*60（1周）,30*24*60*60（1月）
+symbol|y|string|Trading pair||Example：btc_gavc
+step|n|int|Add the Parameter to check latest Kline data,Data Type is time,unit is sec.||60,3*60,5*60,15*60,30*60,60*60（1h）,24*60*60（1d）,7*24*60*60（1w）,30*24*60*60（1mon）
 
 
-**响应数据:**
+**Response data:**
 
 ```json
 {
   "code":200,
-  "msg":"成功",
+  "msg":"success",
   "time":1527837164605,
   "data":{
     "period":{
@@ -186,58 +191,63 @@ step|n|int|加上此参数可查最新一个k线数据，类型为时间，单�
 }
 ```
 
-参数名称|是否必须|类型|描述|默认值|取值范围
+Parameter|Mandatory| Data Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-code|y|int|状态码
-msg|n|string|返回消息
-time|y|long|当前毫秒数
-data|y|object|交易深度数据
+code|y|int|Status code
+msg|n|string|return message
+time|y|long|Current millisseconds
+data|y|object|Trading deep date
 
 **data:**
 
-参数名称|是否必须|类型|描述|默认值|取值范围
+Parameter|Mandatory| Data Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 depth|y|object
-period|n|object|传step时才有值
+period|n|object|Vaule only displayed when uploading step
 
 **depth:**
 
-参数名称|是否必须|类型|描述|默认值|取值范围
+Parameter|Mandatory| Data Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-bids|y|array(array(long))|买盘,[price(成交价), amount(成交量)]
-asks|y|array(array(long))|卖盘,[price(成交价), amount(成交量)]
-date|y|long|时间戳
-lastPrice|y|number|最新成交价
+bids|y|array(array(long))|buy,[price(transaction price), amount(transaction vol)]
+asks|y|array(array(long))|sell,[price(transaction price), amount(transaction vol)]
+date|y|long|Timestamp
+lastPrice|y|number|Latest price
 
 **period:**
 
-参数名称|是否必须|类型|描述|默认值|取值范围
+Parameter|Mandatory| Data Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-marketFrom|y|string|入参symbol
-coinVol|y|string|入参symbol
-type|y|long|入参step,时间
-data|y|array（array）|最后一个k线数据，格式同上，但只有一个
+marketFrom|y|string|Input symbol
+coinVol|y|string|Input symbol
+type|y|long|Input step,time
+data|y|array（array）|Last kline data,same with format above by only one
 
 &nbsp;
 
-### 获取实时成交数据
+### Obtain real-time data
 
 
 - GET /v1/trade
 
-**请求参数:**
+**Request parameters:**
 
-参数名称|是否必须|类型|描述|默认值|取值范围
+Parameter|Mandatory| Data Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-count|y|int|Trades条数||0
-symbol|y|string|交易对||例：btc_gavc
+AccessKeyId|y|string|Access key
+SignatureVersion|y|string|Version
+SignatureMethod|y|string|Signature Method||HmacSHA256
+Signature|y|string|ApiSecret
+Timestamp|y|string|Timestamp
+count|y|int|Trades items||0
+symbol|y|string|Trading pair||example：btc_gavc
 
-**响应数据:**
+**Response data:**
 
 ```json
 {
   "code":200,
-  "msg":"成功",
+  "msg":"success",
   "time":1536315868962,
   "data":{
     "sellSymbol":"BTC",
@@ -249,7 +259,7 @@ symbol|y|string|交易对||例：btc_gavc
         "id":1,
         "time":"02:45:08",
         "en_type":"ask",
-        "type":"卖出"
+        "type":"sell"
       },
       {
         "price":0.007,
@@ -257,7 +267,7 @@ symbol|y|string|交易对||例：btc_gavc
         "id":1,
         "time":"02:45:08",
         "en_type":"ask",
-        "type":"卖出"
+        "type":"sell"
       }
     ]
   }
@@ -266,29 +276,29 @@ symbol|y|string|交易对||例：btc_gavc
 
 ```
 
-参数名称|是否必须|类型|描述|默认值|取值范围
+Parameter|Mandatory| Data Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-code|y|int|状态码
-msg|n|string|返回消息
-time|y|long|当前毫秒数
-data|y|object|实时成交数据
+code|y|int|Status code
+msg|n|string|return message
+time|y|long|Current millisseconds
+data|y|object|Real-time transactions
 
 **data:**
 
-参数名称|是否必须|类型|描述|默认值|取值范围
+Parameter|Mandatory| Data Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-trades|y|array(object)|trades数据
+trades|y|array(object)|trades data
 sellSymbol|y|string|sellSymbol
 buySymbol|y|string|buySymbol
 
 **trades:**
 
-参数名称|是否必须|类型|描述|默认值|取值范围
+Parameter|Mandatory| Data Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-price|y|long|成交价钱
-amount|y|string|成交数量
-id|y|string|成交id
-time|y|string|成交时间
-en_type|y|string|成交方向||"bid"(买入),"ask"(卖出)
-type|y|string|成交类型||"买入","卖出"
+price|y|long|transaction price
+amount|y|string|transaction amount
+id|y|string|transaction id
+time|y|string|transaction time
+en_type|y|string|direction||"bid"(buy),"ask"(sell)
+type|y|string|transaction Data Type||"buy","sell"
 
