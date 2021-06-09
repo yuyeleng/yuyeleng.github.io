@@ -53,7 +53,7 @@ change|y|number|change||
 
 &nbsp;
 
-### 获取k线数据
+### Obtain kline data
 
 -  GET /v1/ticker
 
