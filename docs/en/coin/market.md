@@ -119,7 +119,7 @@ data|y|array(array(number))|Kline data
 
 &nbsp;
 
-### Obtain Deep Data：
+### Obtain Deep Data
 
 
 - GET /v1/depth
