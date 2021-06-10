@@ -5,7 +5,7 @@ sort: 3 # follow a certain sequence of letters or numbers
 
 ### 获取所有交易对  
 
-```json
+```java
 https://hkapi.hotcoin.top/v1/common/symbols
 
 curl "https://hkapi.hotcoin.top/v1/common/symbols"
@@ -26,9 +26,8 @@ data|y|array|symbols列表||
 
 
 **data:**
-<p class="custom-code-title">json代码</p>
 
-``` java
+``` json
 {
    "code": "200",
    "time": 1567045034,

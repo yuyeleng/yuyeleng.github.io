@@ -9,7 +9,11 @@ sort: 4 # follow a certain sequence of letters or numbers
 
 - GET /v1/market/ticker
 
+```java
+https://hkapi.hotcoin.top/v1/market/ticker
 
+curl "https://hkapi.hotcoin.top/v1/market/ticker"
+```
 
 **请求参数:**
 
