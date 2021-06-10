@@ -63,9 +63,9 @@ change|y|number|change||
 -  GET /v1/ticker
 
 ```json
-https://hkapi.hotcoin.top/v1/ticker?symbol="btc_gavc"&step=60
+https://hkapi.hotcoin.top/v1/ticker?symbol=btc_usdt&step=60
 
-curl "https://hkapi.hotcoin.top/v1/ticker?symbol='btc_gavc'&step=60"
+curl "https://hkapi.hotcoin.top/v1/ticker?symbol=btc_usdt&step=60"
 ```
 
 **Request parameters:**
@@ -131,9 +131,9 @@ data|y|array(array(number))|Kline data
 - GET /v1/depth
 
 ```json
-https://hkapi.hotcoin.top/v1/depth?symbol="btc_gavc"&step=60
+https://hkapi.hotcoin.top/v1/depth?symbol=btc_usdt&step=60
 
-curl "https://hkapi.hotcoin.top/v1/depth?symbol='btc_gavc'&step=60"
+curl "https://hkapi.hotcoin.top/v1/depth?symbol=btc_usdt&step=60"
 ```
 
 
@@ -245,9 +245,9 @@ data|y|array（array）|Last kline data,same with format above by only one
 - GET /v1/trade
 
 ```json
-https://hkapi.hotcoin.top/v1/trade?symbol="btc_gavc"&count=60
+https://hkapi.hotcoin.top/v1/trade?symbol=btc_usdt&count=60
 
-curl "https://hkapi.hotcoin.top/v1/trade?symbol='btc_gavc'&count=60"
+curl "https://hkapi.hotcoin.top/v1/trade?symbol=btc_usdt&count=60"
 ```
 
 **Request parameters:**

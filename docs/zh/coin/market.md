@@ -62,9 +62,9 @@ change|y|number|24小时涨跌幅||
 -  GET /v1/ticker
 
 ```json
-https://hkapi.hotcoin.top/v1/ticker?symbol="btc_gavc"&step=60
+https://hkapi.hotcoin.top/v1/ticker?symbol=btc_usdt&step=60
 
-curl "https://hkapi.hotcoin.top/v1/ticker?symbol='btc_gavc'&step=60"
+curl "https://hkapi.hotcoin.top/v1/ticker?symbol=btc_usdt&step=60"
 ```
 
 
@@ -131,9 +131,9 @@ data|y|array(array(number))|K线数据
 - GET /v1/depth
 
 ```json
-https://hkapi.hotcoin.top/v1/depth?symbol="btc_gavc"&step=60
+https://hkapi.hotcoin.top/v1/depth?symbol=btc_usdt&step=60
 
-curl "https://hkapi.hotcoin.top/v1/depth?symbol='btc_gavc'&step=60"
+curl "https://hkapi.hotcoin.top/v1/depth?symbol=btc_usdt&step=60"
 ```
 
 
@@ -245,9 +245,9 @@ data|y|array（array）|最后一个k线数据，格式同上，但只有一个
 - GET /v1/trade
 
 ```json
-https://hkapi.hotcoin.top/v1/trade?symbol="btc_gavc"&count=60
+https://hkapi.hotcoin.top/v1/trade?symbol=btc_usdt&count=60
 
-curl "https://hkapi.hotcoin.top/v1/trade?symbol='btc_gavc'&count=60"
+curl "https://hkapi.hotcoin.top/v1/trade?symbol=btc_usdt&count=60"
 ```
 
 **请求参数:**
