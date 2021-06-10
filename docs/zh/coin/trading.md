@@ -11,11 +11,6 @@ sort: 6 # follow a certain sequence of letters or numbers
 
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|string|访问key	|||
-SignatureVersion|y|string|版本|| |
-SignatureMethod|y|string|签名方法| |HmacSHA256
-Signature|y|string|ApiSecret||
-Timestamp|y|string|时间戳||
 symbol|y|string|交易对| |例：btc_usdt
 type|y|string|类型| | "buy" ,”sell"
 tradeAmount|y|number|数量||
@@ -71,11 +66,6 @@ ID|y|bigint|订单id||
 
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|string|访问key	|||
-SignatureVersion|y|string|版本|| |
-SignatureMethod|y|string|签名方法| |HmacSHA256
-Signature|y|string|ApiSecret||
-Timestamp|y|string|时间戳||
 id|y|bigint	|委单id	| |
 
 **响应数据:**
@@ -104,16 +94,17 @@ time|y|long|当前毫秒数||
 
 - GET /v1/order/detailById
 
+```json
+https://hkapi.hotcoin.top/v1/order/detailById
+
+curl "https://hkapi.hotcoin.top/v1/order/detailById"
+```
+
 
 **请求参数:**
 
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|string|访问key	|||
-SignatureVersion|y|string|版本|| |
-SignatureMethod|y|string|签名方法| |HmacSHA256
-Signature|y|string|ApiSecret||
-Timestamp|y|string|时间戳||
 id|y|bigint	|委单id	| |
 leverAcctid	|n|string	|非杠杆下单无需传词字段，杠杆子账户id，对应开户接口的clientId| |
 
@@ -181,15 +172,17 @@ status|y|int|状态| |未成交、部分成交、完全成交、撤单处理中�
 
 - GET /v1/order/counterpartiesById
 
+```json
+https://hkapi.hotcoin.top/v1/order/counterpartiesById
+
+curl "https://hkapi.hotcoin.top/v1/order/counterpartiesById"
+```
+
+
 **请求参数:**
 
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|string|访问key	|||
-SignatureVersion|y|string|版本|| |
-SignatureMethod|y|string|签名方法| |HmacSHA256
-Signature|y|string|ApiSecret||
-Timestamp|y|string|时间戳||
 id|y|bigint	|委单id	| |
 
 **响应数据:**
@@ -256,15 +249,17 @@ createTime|y|string|创建时间||
 
 - GET /v1/order/entrust
 
+```json
+https://hkapi.hotcoin.top/v1/order/entrust
+
+curl "https://hkapi.hotcoin.top/v1/order/entrust"
+```
+
+
 **请求参数:**
 
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|string|访问key	|||
-SignatureVersion|y|string|版本|| |
-SignatureMethod|y|string|签名方法| |HmacSHA256
-Signature|y|string|ApiSecret||
-Timestamp|y|string|时间戳||
 symbol|y|string	|交易对| |例：btc_usdt
 type|n|int|类型|0|0表示全部 1表示当前 2表示历史
 page|n|int|页码|1|
@@ -391,17 +386,17 @@ sellsymbol|y|string|币种类型符号
 
 - GET /v1/order/matchresults
 
+```json
+https://hkapi.hotcoin.top/v1/order/matchresults
+
+curl "https://hkapi.hotcoin.top/v1/order/matchresults"
+```
 
 **请求参数:**
 
 
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|string|访问key
-SignatureVersion|y|string|版本
-SignatureMethod|y|string|签名方法||HmacSHA256
-Signature|y|string|ApiSecret
-Timestamp|y|string|时间戳
 symbol|y|string|交易对||例：btc_usdt
 types|n|string|查询的订单类型组合，使用','分割||0：买, 1：卖
 startDate|n|string|查询开始日期, 日期格式yyyy-mm-dd|-1d 查询结束日期的前1天|取值范围 [((endDate) – 1), (endDate)] ，查询窗口最大为2天，窗口平移范围为最近61天

@@ -12,11 +12,6 @@ sort: 6 # follow a certain sequence of letters or numbers
 
 Parameter|Mandatory|Data Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|string|Access Key	|||
-SignatureVersion|y|string|Version|| |
-SignatureMethod|y|string|Signature Method| |HmacSHA256
-Signature|y|string|ApiSecret||
-Timestamp|y|string|Timestamp||
 symbol|y|string|Trading pair| |example：btc_usdt
 type|y|string|Type| | "buy" ,”sell"
 tradeAmount|y|number|amount||
@@ -73,11 +68,6 @@ Note:Cancel order requests is under asynchronous pattern,call interface /v1/orde
 
 Parameter|Mandatory|Data Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|string|Access key	|||
-SignatureVersion|y|string|Version|| |
-SignatureMethod|y|string|Signature Method| |HmacSHA256
-Signature|y|string|ApiSecret||
-Timestamp|y|string|Timestamp||
 id|y|bigint	|Order id	| |
 
 **Response data:**
@@ -106,16 +96,17 @@ time|y|long|Current millisseconds||
 
 - GET /v1/order/detailById
 
+```json
+https://hkapi.hotcoin.top/v1/order/detailById
+
+curl "https://hkapi.hotcoin.top/v1/order/detailById"
+```
+
 
 **Request parameters:**
 
 Parameter|Mandatory|Data Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|string|Access key	|||
-SignatureVersion|y|string|Version|| |
-SignatureMethod|y|string|Signature Method| |HmacSHA256
-Signature|y|string|ApiSecret||
-Timestamp|y|string|Timestamp||
 id|y|bigint	|order id	| |
 leverAcctid	|n|string	|Fields not required innon-leverorder,Sub-account id,clientId in line with API| |
 
@@ -183,15 +174,17 @@ status|y|int|Status| |Unfill,Partial filled,Filled,Revoking,Cancelled
 
 - GET /v1/order/counterpartiesById
 
+```json
+https://hkapi.hotcoin.top/v1/order/counterpartiesById
+
+curl "https://hkapi.hotcoin.top/v1/order/counterpartiesById"
+```
+
+
 **Request parameters:**
 
 Parameter|Mandatory|Data Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|string|Access key	|||
-SignatureVersion|y|string|Version|| |
-SignatureMethod|y|string|Signature Method| |HmacSHA256
-Signature|y|string|ApiSecret||
-Timestamp|y|string|Timestamp||
 id|y|bigint	|order id	| |
 
 **Response data:**
@@ -258,15 +251,17 @@ createTime|y|string|Create time||
 
 - GET /v1/order/entrust
 
+```json
+https://hkapi.hotcoin.top/v1/order/entrust
+
+curl "https://hkapi.hotcoin.top/v1/order/entrust"
+```
+
+
 **Request parameters:**
 
 Parameter|Mandatory|Data Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|string|Access key	|||
-SignatureVersion|y|string|Version|| |
-SignatureMethod|y|string|Signature Method| |HmacSHA256
-Signature|y|string|ApiSecret||
-Timestamp|y|string|Timestamp||
 symbol|y|string	|Trading pairs| |example：btc_usdt
 type|n|int|Data Type|0|0 is all 1 iscurrent 2 is history
 page|n|int|page|1|
@@ -393,17 +388,17 @@ sellsymbol|y|string|Currency Data Type symbol
 
 - GET /v1/order/matchresults
 
+```json
+https://hkapi.hotcoin.top/v1/order/matchresults
+
+curl "https://hkapi.hotcoin.top/v1/order/matchresults"
+```
 
 **Request parameters:**
 
 
 Parameter|Mandatory|Data Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|string|Access key
-SignatureVersion|y|string|Version
-SignatureMethod|y|string|Signature Method||HmacSHA256
-Signature|y|string|ApiSecret
-Timestamp|y|string|Timestamp
 symbol|y|string|Trading pairs||example：btc_usdt
 types|n|string|query order  Data Type compositio，separate by','||0：buy, 1：sell
 startDate|n|string|Inquire start date, date form yyyy-mm-dd|-1d Inquire the day before end data|Value Range [((endDate) – 1), (endDate)] ，Max inquery date is 2 days in query window, inquery ranges of nearly 61 days

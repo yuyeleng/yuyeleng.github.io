@@ -9,15 +9,18 @@ sort: 5 # follow a certain sequence of letters or numbers
 
 - GET /v1/balance
 
+```json
+https://hkapi.hotcoin.top/v1/balance?AccessKeyId=""
+
+curl "https://hkapi.hotcoin.top/v1/balance?AccessKeyId=''"
+```
+
 **Request parameters:**
 
 Parameter|Mandatory|Data Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
 AccessKeyId|y|string|Access key
-SignatureVersion|y|string|Version
-SignatureMethod|y|string|Signature Method||HmacSHA256
-Signature|y|string|ApiSecret
-Timestamp|y|string|Timestamp
+
 
 **Response data:**
 
