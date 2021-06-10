@@ -466,7 +466,7 @@ sellsymbol|y|string|Currency Data Type symbol
 
 &nbsp;
 
-### 当前和历史成交记录
+### Current&History Transaction Record
 
 - GET /v1/order/matchresults
 
@@ -675,7 +675,7 @@ errmsg}]|n|string|Return error Description
 
 &nbsp;
 
-### 获取用户余额
+### Obtain User Balance
 
 - GET /v1/balance
 
