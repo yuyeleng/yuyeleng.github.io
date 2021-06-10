@@ -5,7 +5,7 @@ sort: 1 # follow a certain sequence of letters or numbers
 
 Welcome to Hotcoin API！
 
-This is the official Hotcoin API document, and will be continue updating. Huobi will also publish API announcement in advance for any API change. Please subscribe to our announcements so that you can get the latest updates.
+This is the official Hotcoin API document, and will be continue updating. Hotcoin will also publish API announcement in advance for any API change. Please subscribe to our announcements so that you can get the latest updates.
 
 Below is the content for Spot API document:
 
