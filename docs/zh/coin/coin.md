@@ -1,7 +1,7 @@
 ---
 sort: 1 # follow a certain sequence of letters or numbers
 ---
-# 简介1
+# 简介
 欢迎使用热币 API！  
 此文档是热币API的唯一官方文档，热币API提供的功能和服务会在此文档持续更新，并会发布公告进行通知，建议您关注和订阅我们的公告，及时获取相关信息。
 
