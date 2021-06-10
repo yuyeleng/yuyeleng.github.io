@@ -1,5 +1,5 @@
 ---
-sort: 1 # follow a certain sequence of letters or numbers
+sort: 2 # follow a certain sequence of letters or numbers
 ---
 # 简介
 欢迎使用热币 API！  

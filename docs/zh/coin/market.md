@@ -1,5 +1,5 @@
 ---
-sort: 3 # follow a certain sequence of letters or numbers
+sort: 4 # follow a certain sequence of letters or numbers
 ---
 # 行情接口
 
