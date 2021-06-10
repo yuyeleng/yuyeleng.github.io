@@ -9,6 +9,11 @@ sort: 4 # follow a certain sequence of letters or numbers
 
 - GET /v1/market/ticker
 
+```json
+https://hkapi.hotcoin.top/v1/market/ticker
+
+curl "https://hkapi.hotcoin.top/v1/market/ticker"
+```
 
 
 **Request parameters:**
@@ -57,15 +62,16 @@ change|y|number|change||
 
 -  GET /v1/ticker
 
+```json
+https://hkapi.hotcoin.top/v1/ticker?symbol="btc_gavc"&step=60
+
+curl "https://hkapi.hotcoin.top/v1/ticker?symbol='btc_gavc'&step=60"
+```
+
 **Request parameters:**
 
 Parameter|Mandatory| Data Type|Description|Default|Value Range
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|string|Access key
-SignatureVersion|y|string|Version
-SignatureMethod|y|string|Signature Method||HmacSHA256
-Signature|y|string|ApiSecret
-Timestamp|y|string|Timestamp
 step|y|int|Time：Sec||60（1min）,300（5mins）,900（15mins）,1800（30mins）,3600（1h）,86400（1d）,604800（1w）,2592000（1mon）
 symbol|y|string|pairs||btc_gavc
 
@@ -123,6 +129,14 @@ data|y|array(array(number))|Kline data
 
 
 - GET /v1/depth
+
+```json
+https://hkapi.hotcoin.top/v1/depth?symbol="btc_gavc"&step=60
+
+curl "https://hkapi.hotcoin.top/v1/depth?symbol='btc_gavc'&step=60"
+```
+
+
 
 **Request parameters:**
 
@@ -229,6 +243,12 @@ data|y|array（array）|Last kline data,same with format above by only one
 
 
 - GET /v1/trade
+
+```json
+https://hkapi.hotcoin.top/v1/trade?symbol="btc_gavc"&count=60
+
+curl "https://hkapi.hotcoin.top/v1/trade?symbol='btc_gavc'&count=60"
+```
 
 **Request parameters:**
 

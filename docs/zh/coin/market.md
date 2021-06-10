@@ -9,7 +9,7 @@ sort: 4 # follow a certain sequence of letters or numbers
 
 - GET /v1/market/ticker
 
-```java
+```json
 https://hkapi.hotcoin.top/v1/market/ticker
 
 curl "https://hkapi.hotcoin.top/v1/market/ticker"
@@ -61,15 +61,17 @@ change|y|number|24小时涨跌幅||
 
 -  GET /v1/ticker
 
+```json
+https://hkapi.hotcoin.top/v1/ticker?symbol="btc_gavc"&step=60
+
+curl "https://hkapi.hotcoin.top/v1/ticker?symbol='btc_gavc'&step=60"
+```
+
+
 **请求参数:**
 
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|string|访问key
-SignatureVersion|y|string|版本
-SignatureMethod|y|string|签名方法||HmacSHA256
-Signature|y|string|ApiSecret
-Timestamp|y|string|时间戳
 step|y|int|时间：秒||60（1分钟）,300（5分钟）,900（15分钟）,1800（30分钟）,3600（1小时）,86400（1天）,604800（1周）,2592000（1月）
 symbol|y|string|交易对||例：btc_gavc
 
@@ -127,6 +129,14 @@ data|y|array(array(number))|K线数据
 
 
 - GET /v1/depth
+
+```json
+https://hkapi.hotcoin.top/v1/depth?symbol="btc_gavc"&step=60
+
+curl "https://hkapi.hotcoin.top/v1/depth?symbol='btc_gavc'&step=60"
+```
+
+
 
 **请求参数:**
 
@@ -234,15 +244,16 @@ data|y|array（array）|最后一个k线数据，格式同上，但只有一个
 
 - GET /v1/trade
 
+```json
+https://hkapi.hotcoin.top/v1/trade?symbol="btc_gavc"&count=60
+
+curl "https://hkapi.hotcoin.top/v1/trade?symbol='btc_gavc'&count=60"
+```
+
 **请求参数:**
 
 参数名称|是否必须|类型|描述|默认值|取值范围
 ------------- | ------------- |  ------------- | ------------- |  ------------- | -------------
-AccessKeyId|y|string|访问key
-SignatureVersion|y|string|版本
-SignatureMethod|y|string|签名方法||HmacSHA256
-Signature|y|string|ApiSecret
-Timestamp|y|string|时间戳
 count|y|int|Trades条数||0
 symbol|y|string|交易对||例：btc_gavc
 

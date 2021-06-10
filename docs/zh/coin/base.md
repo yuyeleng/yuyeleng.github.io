@@ -5,7 +5,7 @@ sort: 3 # follow a certain sequence of letters or numbers
 
 ### 获取所有交易对  
 
-```java
+```json
 https://hkapi.hotcoin.top/v1/common/symbols
 
 curl "https://hkapi.hotcoin.top/v1/common/symbols"
