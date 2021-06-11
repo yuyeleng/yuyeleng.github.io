@@ -1,7 +1,7 @@
 ---
 sort: 5 # follow a certain sequence of letters or numbers
 ---
-# 账户相关1
+# 账户相关
 
 &nbsp;
 
